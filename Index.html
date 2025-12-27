@@ -122,7 +122,107 @@ footer span {
 </head>
 
 <body>
+<style>
+/* NAVBAR */
+.navbar {
+    background: #0a2540;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.navbar .logo {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin-left: 25px;
+}
+
+.navbar ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #00d084;
+}
+
+.join-btn {
+    background: #00d084;
+    color: #0a2540 !important;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+/* MOBILE MENU */
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    color: #fff;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        background: #0a2540;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    .navbar ul li {
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar ul.active {
+        display: flex;
+    }
+}
+</style>
+
+<nav class="navbar">
+    <a href="index.html" class="logo">EverFlow Alliance</a>
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <ul id="menu">
+        
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="advertise.html">Advertise</a></li>
+        
+    </ul>
+</nav>
+
+<script>
+function toggleMenu() {
+    document.getElementById("menu").classList.toggle("active");
+}
+</script>
 <header>
     <h1>EverFlow Alliance</h1>
     <p>A Global Membership Ecosystem for Long-Term Value</p>
